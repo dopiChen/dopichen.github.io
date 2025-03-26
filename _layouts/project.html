@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ page.title }}</h1>
+            <p>欢迎来到项目管理专栏，这里展示了我们的一些项目和管理经验。</p>
+        </header>
+
+        <div class="content">
+            <section class="project-list">
+                <h2>项目列表</h2>
+                <ul>
+                    {% for post in site.xjtuse-project-management %}
+                    <li>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <aside class="sidebar">
+                <h3>关于我们</h3>
+                <p>这里可以放一些关于团队的信息或者联系信息。</p>
+            </aside>
+        </div>
+
+        <footer>
+            <p>© {{ site.title }} - 版权所有</p>
+        </footer>
+    </div>
+</body>
+</html> 

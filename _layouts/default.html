@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+     <!-- 数学公式 -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', '\''],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                inlineMath: [['$','$']],
+            },
+            TeX: {equationNumbers: {autoNumber: "AMS"}},
+        });
+</script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="user-info">
+                <h2>{{ site.author }}</h2>
+                <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                <div class="social-icons">
+                    <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">Twitter</a>
+                    <a href="https://github.com/dopiChen" target="_blank">GitHub</a>
+                    <!-- 添加更多社交媒体链接 -->
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <main>
+                <h1>Welcome to my blog</h1>
+                <p>以下文章笔记均是自己阅读前辈们的文章后，自己总结的笔记，如有错误，欢迎指正。如有抄袭，请联系我删除。</p>
+                {{ content }}
+            </main>
+
+            <aside class="sidebar">
+                <h3>专栏</h3>
+                <ul>
+                    <li><a href="{{ '/xjtuse-project-management/' | relative_url }}">项目管理</a></li>
+                    <li><a href="{{ '/xjtuse-algorithm/' | relative_url }}">算法设计</a></li>
+                    <!-- 列出更多专栏 -->
+                </ul>
+            </aside>
+        </div>
+
+        <footer>
+            <p>© {{ site.title }} - 版权所有</p>
+            <!-- 添加社交媒体链接 -->
+        </footer>
+    </div>
+</body>
+</html> 
